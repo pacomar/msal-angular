@@ -27,7 +27,7 @@ export class MsalService {
       });
   }
 
-  public getUser() {
+  public getUser(): any {
     return this.authenticated.then(isauthenticated => isauthenticated ? this.app.getUser() : {});
   }
 
