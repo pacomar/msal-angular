@@ -1,6 +1,6 @@
 {
 	"name": "msal-angular-6",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Angular 6 MSAL wrapper.",
 	"main": "index.js",
 	"scripts": {
