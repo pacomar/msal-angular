@@ -1,51 +1,51 @@
 {
-    "name": "msal-angular",
-    "version": "1.0.6",
-    "description": "Angular MSAL wrapper.",
-    "main": "index.js",
-    "scripts": {
-        "build": "gulp clean && gulp compile && gulp copy",
-        "publish": "npm run build && gulp bump && gulp copy && gulp git-add && gulp git-commit && gulp git-push && gulp publish"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/benbaran/msal-angular.git"
-    },
-    "keywords": [
-        "MSAL",
-        "Angular"
-    ],
-    "author": "Ben Baran",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/benbaran/msal-angular/issues"
-    },
-    "homepage": "https://github.com/benbaran/msal-angular#readme",
-    "dependencies": {
-        "msal": "^0.1.5"
-    },
-    "devDependencies": {
-        "@angular/common": "^6.0.0",
-        "@angular/compiler": "^6.0.0",
-        "@angular/compiler-cli": "^6.0.0",
-        "@angular/core": "^6.0.0",
-        "@angular/platform-browser": "^6.0.0",
-        "@angular/router": "^6.0.0",
-        "del": "^3.0.0",
-        "gulp": "^4.0.0",
-        "gulp-bump": "^2.9.0",
-        "gulp-typescript": "^3.2.4",
-        "merge2": "^1.2.1",
-        "rxjs": "^6.1.0",
-        "typescript": "^2.7.2",
-        "zone.js": "^0.8.26"
-    },
-    "peerDependencies": {
-        "@angular/common": "^6.0.0",
-        "@angular/core": "^6.0.0",
-        "@angular/platform-browser": "^6.0.0",
-        "@angular/router": "^6.0.0",
-        "rxjs": "^6.1.0",
-        "zone.js": "^0.8.26"
-    }
+	"name": "msal-angular-6",
+	"version": "1.0.6",
+	"description": "Angular 6 MSAL wrapper.",
+	"main": "index.js",
+	"scripts": {
+		"build": "gulp clean && gulp compile && gulp copy",
+		"publish": "npm run build && gulp bump && gulp copy && gulp git-add && gulp git-commit && gulp git-push && gulp publish"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/pacomar/msal-angular-6.git"
+	},
+	"keywords": [
+		"MSAL",
+		"Angular"
+	],
+	"author": "Francisco Martinez",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/pacomar/msal-angular-6/issues"
+	},
+	"homepage": "https://github.com/pacomar/msal-angular-6#readme",
+	"dependencies": {
+		"msal": "^0.1.5"
+	},
+	"devDependencies": {
+		"@angular/common": "^6.0.0",
+		"@angular/compiler": "^6.0.0",
+		"@angular/compiler-cli": "^6.0.0",
+		"@angular/core": "^6.0.0",
+		"@angular/platform-browser": "^6.0.0",
+		"@angular/router": "^6.0.0",
+		"del": "^3.0.0",
+		"gulp": "^4.0.0",
+		"gulp-bump": "^2.9.0",
+		"gulp-typescript": "^3.2.4",
+		"merge2": "^1.2.1",
+		"rxjs": "^6.1.0",
+		"typescript": "^2.7.2",
+		"zone.js": "^0.8.26"
+	},
+	"peerDependencies": {
+		"@angular/common": "^6.0.0",
+		"@angular/core": "^6.0.0",
+		"@angular/platform-browser": "^6.0.0",
+		"@angular/router": "^6.0.0",
+		"rxjs": "^6.1.0",
+		"zone.js": "^0.8.26"
+	}
 }
