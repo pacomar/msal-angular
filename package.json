@@ -1,10 +1,10 @@
 {
 	"name": "msal-angular-6",
-	"version": "1.0.10",
+	"version": "1.0.11",
 	"description": "Angular 6 MSAL wrapper.",
 	"main": "index.js",
 	"scripts": {
-		"build": "gulp clean && gulp default && gulp copy",
+		"build": "gulp clean && gulp compile && gulp babeliza && gulp copy",
 		"publish": "npm run build && gulp bump && gulp copy && gulp git-add && gulp git-commit && gulp git-push && gulp publish"
 	},
 	"repository": {
@@ -22,6 +22,7 @@
 	},
 	"homepage": "https://github.com/pacomar/msal-angular-6#readme",
 	"dependencies": {
+		"@babel/preset-env": "^7.1.0",
 		"msal": "^0.1.5"
 	},
 	"devDependencies": {
@@ -32,6 +33,7 @@
 		"@angular/platform-browser": "^6.0.0",
 		"@angular/router": "^6.0.0",
 		"@babel/core": "^7.1.2",
+		"@types/gulp-babel": "^6.1.29",
 		"del": "^3.0.0",
 		"gulp": "^4.0.0",
 		"gulp-babel": "^8.0.0-beta.2",

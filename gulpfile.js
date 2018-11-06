@@ -3,25 +3,28 @@ var bump = require('gulp-bump'),
 	exec = require('child_process').exec,
 	gulp = require('gulp'),
 	fs = require('fs'),
-	babel = require("gulp-babel");
-gulp.task('clean', function () {
+	babel = require('gulp-babel');
+
+gulp.task('clean', function() {
 	return del(['./dist/*']);
 });
 
-gulp.task('compile', function (cb) {
-	exec('ngc -p tsconfig-aot.json', function (err, stdout, stderr) {
+gulp.task('compile', function(cb) {
+	exec('ngc -p tsconfig-aot.json', function(err, stdout, stderr) {
 		console.log(stdout);
 		console.log(stderr);
 		cb(err);
 	});
 });
 
-gulp.task("default", function () {
-	return gulp.src("src/index.ts")
+gulp.task('babeliza', function() {
+	return gulp
+		.src('dist/**.js')
 		.pipe(babel())
-		.pipe(gulp.dest("dist"));
+		.pipe(gulp.dest('dist'));
 });
-gulp.task('bump', async function () {
+
+gulp.task('bump', async function() {
 	gulp
 		.src('./package.json')
 		.pipe(
@@ -34,7 +37,7 @@ gulp.task('bump', async function () {
 	return true;
 });
 
-gulp.task('copy', async function (cb) {
+gulp.task('copy', async function(cb) {
 	const pkgjson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 	delete pkgjson.scripts;
@@ -48,18 +51,18 @@ gulp.task('copy', async function (cb) {
 	return true;
 });
 
-gulp.task('git-add', function (cb) {
-	exec('git add -A', function (err, stdout, stderr) {
+gulp.task('git-add', function(cb) {
+	exec('git add -A', function(err, stdout, stderr) {
 		console.log(stdout);
 		console.log(stderr);
 		cb(err);
 	});
 });
 
-gulp.task('git-commit', function (cb) {
+gulp.task('git-commit', function(cb) {
 	var package = require('./package.json');
 
-	exec('git commit -m "Version ' + package.version + ' release."', function (
+	exec('git commit -m "Version ' + package.version + ' release."', function(
 		err,
 		stdout,
 		stderr
@@ -70,16 +73,16 @@ gulp.task('git-commit', function (cb) {
 	});
 });
 
-gulp.task('git-push', function (cb) {
-	exec('git push', function (err, stdout, stderr) {
+gulp.task('git-push', function(cb) {
+	exec('git push', function(err, stdout, stderr) {
 		console.log(stdout);
 		console.log(stderr);
 		cb(err);
 	});
 });
 
-gulp.task('publish', function (cb) {
-	exec('npm publish ./dist', function (err, stdout, stderr) {
+gulp.task('publish', function(cb) {
+	exec('npm publish ./dist', function(err, stdout, stderr) {
 		console.log(stdout);
 		console.log(stderr);
 		cb(err);
