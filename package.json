@@ -4,7 +4,7 @@
 	"description": "Angular 6 MSAL wrapper.",
 	"main": "index.js",
 	"scripts": {
-		"build": "gulp clean && gulp compile && gulp copy",
+		"build": "gulp clean && gulp default && gulp copy",
 		"publish": "npm run build && gulp bump && gulp copy && gulp git-add && gulp git-commit && gulp git-push && gulp publish"
 	},
 	"repository": {
@@ -31,8 +31,10 @@
 		"@angular/core": "^6.0.0",
 		"@angular/platform-browser": "^6.0.0",
 		"@angular/router": "^6.0.0",
+		"@babel/core": "^7.1.2",
 		"del": "^3.0.0",
 		"gulp": "^4.0.0",
+		"gulp-babel": "^8.0.0-beta.2",
 		"gulp-bump": "^2.9.0",
 		"gulp-typescript": "^3.2.4",
 		"merge2": "^1.2.1",
