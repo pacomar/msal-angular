@@ -2,8 +2,7 @@ var bump = require('gulp-bump'),
 	del = require('del'),
 	exec = require('child_process').exec,
 	gulp = require('gulp'),
-	fs = require('fs'),
-	babel = require('gulp-babel');
+	fs = require('fs');
 
 gulp.task('clean', function() {
 	return del(['./dist/*']);
@@ -15,13 +14,6 @@ gulp.task('compile', function(cb) {
 		console.log(stderr);
 		cb(err);
 	});
-});
-
-gulp.task('babeliza', function() {
-	return gulp
-		.src('dist/**.js')
-		.pipe(babel())
-		.pipe(gulp.dest('dist'));
 });
 
 gulp.task('bump', async function() {
