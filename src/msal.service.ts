@@ -37,7 +37,7 @@ export class MsalService {
         if (isauthenticated) {
             const user = this.app.getUser();
             user.name = userAD.name;
-            user.idToken.name = userAD.name;
+            //user.idToken.name = userAD.name;
             return user;
         } else {
             return {}
