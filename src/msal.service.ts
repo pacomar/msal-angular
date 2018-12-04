@@ -1,12 +1,16 @@
 import { Injectable, InjectionToken, Inject } from '@angular/core';
+
 import { MsalConfig } from './msal-config';
 import * as Msal from 'msal';
+
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 export const MSAL_CONFIG = new InjectionToken<string>('MSAL_CONFIG');
 
 @Injectable()
 export class MsalService {
-
+  JwtHelper = new JwtHelperService();
+  
   public error: string;
   private app: Msal.UserAgentApplication;
 
@@ -28,7 +32,17 @@ export class MsalService {
   }
 
   public getUser(): any {
-    return this.authenticated.then(isauthenticated => isauthenticated ? this.app.getUser() : {});
+    const userAD = this.JwtHelper.decodeToken(sessionStorage.getItem('msal.idtoken'));
+    return this.authenticated.then(isauthenticated => {
+        if (isauthenticated) {
+            const user = this.app.getUser();
+            user.name = userAD.name;
+            user.idToken.name = userAD.name;
+            return user;
+        } else {
+            return {}
+        }
+    });
   }
 
   get authenticated() {

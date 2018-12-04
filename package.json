@@ -22,6 +22,7 @@
 	},
 	"homepage": "https://github.com/pacomar/msal-angular-6#readme",
 	"dependencies": {
+		"@auth0/angular-jwt": "^2.0.0",
 		"msal": "^0.1.5"
 	},
 	"devDependencies": {
